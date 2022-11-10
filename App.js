@@ -27,7 +27,6 @@ const App = () => {
             fontWeight: 'bold',
             color: '#000',
           },
-          headerShown: false,
         }}>
         <Tab.Screen
           name="Home"
