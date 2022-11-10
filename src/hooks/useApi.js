@@ -30,7 +30,7 @@ const useApi = url => {
     }
   };
 
-  return [data, loading, error];
+  return [data, loading, error, fetchData];
 };
 
 export default useApi;
