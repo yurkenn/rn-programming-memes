@@ -9,7 +9,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#909290',
+    borderColor: '#d6d6d6',
     margin: 10,
     padding: 10,
   },
@@ -48,8 +48,11 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   heart: {
-    width: 100,
-    height: 100,
     position: 'absolute',
+    resizeMode: 'center',
+    width: getWindowWidth / 8,
+    height: getWindowWidth / 8,
+    elevation: 1,
+    top: getWindowHeight / 2.5,
   },
 });
