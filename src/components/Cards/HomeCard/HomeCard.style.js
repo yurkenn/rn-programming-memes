@@ -18,6 +18,7 @@ export default StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#000',
+    marginBottom: 10,
   },
   subname_container: {
     flexDirection: 'row',
@@ -45,5 +46,10 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  heart: {
+    width: 100,
+    height: 100,
+    position: 'absolute',
   },
 });
