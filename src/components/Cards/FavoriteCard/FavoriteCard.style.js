@@ -9,7 +9,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#909290',
+    borderColor: '#d6d6d6',
     margin: 10,
     padding: 10,
   },
@@ -46,5 +46,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  pressable: {
+    opacity: 0.5,
   },
 });
