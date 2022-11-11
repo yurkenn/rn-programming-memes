@@ -4,7 +4,6 @@ import style from './FavoriteCard.style';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useDispatch} from 'react-redux';
 import {removeFavorite} from '../../../redux/favoriteSlice';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const FavoriteCard = ({favorite}) => {
   // dispatch
@@ -18,7 +17,9 @@ const FavoriteCard = ({favorite}) => {
   //onblur
 
   return (
-    <TouchableOpacity onLongPress={handleRemoveFavorite}>
+    <Pressable
+      style={({pressed}) => pressed && style.pressed}
+      onLongPress={handleRemoveFavorite}>
       <View style={style.container}>
         <Text style={style.title}>{favorite.title}</Text>
         <Image style={style.image} source={{uri: favorite.link}} />
@@ -30,8 +31,9 @@ const FavoriteCard = ({favorite}) => {
           <Icon name="thumb-up" size={20} color="#000" />
           <Text style={style.upvote}>{favorite.up_votes}</Text>
         </View>
+        <Text style={style.warning}>Press long if you want to delete it</Text>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
