@@ -47,7 +47,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  pressable: {
-    opacity: 0.5,
+  pressed: {
+    opacity: 0.75,
+  },
+  warning: {
+    fontSize: 15,
+    color: '#000',
+    fontStyle: 'italic',
   },
 });
