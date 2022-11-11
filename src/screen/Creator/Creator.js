@@ -2,7 +2,7 @@ import {View, Text, Image, Linking, TouchableOpacity} from 'react-native';
 import React from 'react';
 import style from './Creator.style';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Hello from '../../components/Hello/Hello';
+import Hello from '../../components/Lottie/Hello/Hello';
 
 const openGithub = () => {
   Linking.openURL('https://github.com/yurkenn');
