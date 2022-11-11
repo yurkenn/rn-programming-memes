@@ -10,56 +10,59 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import store from './src/redux/store';
 import {Provider} from 'react-redux';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <Tab.Navigator
-          screenOptions={{
-            tabBarActiveTintColor: '#e91e63',
-            tabBarInactiveTintColor: '#000',
-            tabBarStyle: {
-              backgroundColor: '#fff',
-              borderTopColor: 'transparent',
-              elevation: 0,
-            },
-            headerTitleAlign: 'center',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-              color: '#000',
-            },
-          }}>
-          <Tab.Screen
-            name="Home"
-            component={Home}
-            options={{
-              tabBarIcon: ({color, size}) => (
-                <Icon name="home" color={color} size={size} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Favorites"
-            component={Favorites}
-            options={{
-              tabBarIcon: ({color, size}) => (
-                <Icon name="info" color={color} size={size} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Creator"
-            component={Creator}
-            options={{
-              tabBarIcon: ({color, size}) => (
-                <Icon name="person" color={color} size={size} />
-              ),
-            }}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <NavigationContainer>
+          <Tab.Navigator
+            screenOptions={{
+              tabBarActiveTintColor: '#e91e63',
+              tabBarInactiveTintColor: '#000',
+              tabBarStyle: {
+                backgroundColor: '#fff',
+                borderTopColor: 'transparent',
+                elevation: 0,
+              },
+              headerTitleAlign: 'center',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+                color: '#000',
+              },
+            }}>
+            <Tab.Screen
+              name="Home"
+              component={Home}
+              options={{
+                tabBarIcon: ({color, size}) => (
+                  <Icon name="home" color={color} size={size} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Favorites"
+              component={Favorites}
+              options={{
+                tabBarIcon: ({color, size}) => (
+                  <Icon name="info" color={color} size={size} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Creator"
+              component={Creator}
+              options={{
+                tabBarIcon: ({color, size}) => (
+                  <Icon name="person" color={color} size={size} />
+                ),
+              }}
+            />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </GestureHandlerRootView>
     </Provider>
   );
 };
