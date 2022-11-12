@@ -1,7 +1,7 @@
 import {View, Text, Image, Pressable} from 'react-native';
 import React from 'react';
 import style from './FavoriteCard.style';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useDispatch} from 'react-redux';
 import {removeFavorite} from '../../../redux/favoriteSlice';
 
@@ -21,14 +21,15 @@ const FavoriteCard = ({favorite}) => {
       style={({pressed}) => pressed && style.pressed}
       onLongPress={handleRemoveFavorite}>
       <View style={style.container}>
+        <View style={style.subname_container}>
+          <Icon name="user" size={20} color="#000" />
+          <Text style={style.subname}>{favorite.subreddit_name}</Text>
+        </View>
         <Text style={style.title}>{favorite.title}</Text>
         <Image style={style.image} source={{uri: favorite.link}} />
-        <View style={style.subname_container}>
-          <Text style={style.subname}>{favorite.subreddit_name}</Text>
-          <Icon name="face" size={20} color="#000" />
-        </View>
+
         <View style={style.vote_container}>
-          <Icon name="thumb-up" size={20} color="#000" />
+          <Icon name="heart" size={20} color="#000" />
           <Text style={style.upvote}>{favorite.up_votes}</Text>
         </View>
         <Text style={style.warning}>Press long if you want to delete it</Text>
