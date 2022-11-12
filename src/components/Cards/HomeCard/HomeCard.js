@@ -1,7 +1,7 @@
 import {View, Text, Image} from 'react-native';
-import React, {useCallback, useRef, useState} from 'react';
+import React, {useCallback, useRef} from 'react';
 import style from './HomeCard.style';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useDispatch} from 'react-redux';
 import {addFavorite} from '../../../redux/favoriteSlice';
 import {TapGestureHandler} from 'react-native-gesture-handler';
@@ -41,18 +41,18 @@ const HomeCard = ({memes, onPress}) => {
       onActivated={onDoubleTap}>
       <Animated.View>
         <View style={style.container}>
+          <View style={style.subname_container}>
+            <Icon name="user" size={20} color="#000" />
+            <Text style={style.subname}>{memes.subreddit_name}</Text>
+          </View>
           <Text style={style.title}>{memes.title}</Text>
           <Image style={style.image} source={{uri: memes.link}} />
           <AnimatedImage
             source={require('../../../assets/like.png')}
             style={[style.heart, rStlye]}
           />
-          <View style={style.subname_container}>
-            <Text style={style.subname}>{memes.subreddit_name}</Text>
-            <Icon name="face" size={20} color="#000" />
-          </View>
           <View style={style.vote_container}>
-            <Icon name="thumb-up" size={20} color="#000" />
+            <Icon name="heart" size={20} color="#000" />
             <Text style={style.upvote}>{memes.up_votes}</Text>
           </View>
         </View>
