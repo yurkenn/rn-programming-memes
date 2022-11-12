@@ -32,7 +32,6 @@ const Favorites = () => {
       data={favoriteMemes}
       renderItem={renderFavorite}
       keyExtractor={keyExtractor}
-      horizontal
     />
   );
 };
