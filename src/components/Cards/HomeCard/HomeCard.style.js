@@ -5,8 +5,8 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#d6d6d6',
@@ -18,21 +18,23 @@ export default StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#000',
+    marginTop: 10,
+    marginLeft: 10,
     marginBottom: 10,
   },
   subname_container: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 10,
+    marginLeft: 10,
   },
   subname: {
     fontSize: 15,
     color: '#000',
-    marginRight: 5,
+    marginLeft: 5,
   },
   image: {
     width: getWindowWidth - 40,
-    height: getWindowHeight / 1.5,
+    height: getWindowHeight / 1.7,
     resizeMode: 'contain',
   },
   upvote: {
@@ -46,6 +48,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    marginLeft: 10,
   },
   heart: {
     position: 'absolute',
@@ -53,6 +56,8 @@ export default StyleSheet.create({
     width: getWindowWidth / 8,
     height: getWindowWidth / 8,
     elevation: 1,
+    zIndex: 1,
     top: getWindowHeight / 2.5,
+    left: getWindowWidth / 2.5,
   },
 });
